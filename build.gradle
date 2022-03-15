@@ -4,7 +4,7 @@ plugins {
     id("gronk").version("latest.release")
 }
 
-group("net.gudenau.lib")
+group("net.auoeke")
 version("1.7.1")
 
 javaVersion(16)
@@ -24,8 +24,8 @@ publishing {
         mavenLocal()
 
         maven("maven.auoeke.net") {
-            username(System.properties["maven.username"])
-            password(System.properties["maven.password"])
+            username(systemProperty("maven.username"))
+            password(systemProperty("maven.password"))
         }
     }
 }
