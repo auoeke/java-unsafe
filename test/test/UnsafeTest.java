@@ -4,7 +4,6 @@ import net.gudenau.lib.unsafe.Unsafe;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 
-@SuppressWarnings("StringEquality")
 @Testable
 public class UnsafeTest extends Unsafe {
     @Test void allocateInstanceTest() {
@@ -12,14 +11,14 @@ public class UnsafeTest extends Unsafe {
     }
 
     @Test void throwable() {
-        var message = "Throwable message";
+        var throwable = new Throwable("Throwable message");
 
         try {
-            throwException(new Throwable(message));
+            throwException(throwable);
 
             throw new AssertionError();
-        } catch (Throwable throwable) {
-            assert throwable.getClass() == Throwable.class && throwable.getMessage() == message;
+        } catch (Throwable trouble) {
+            assert trouble == throwable;
         }
     }
 }
