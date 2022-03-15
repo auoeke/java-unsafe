@@ -11,7 +11,7 @@ public class UnsafeTest extends Unsafe {
     }
 
     @Test void throwable() {
-        var throwable = new Throwable("Throwable message");
+        var throwable = new Throwable();
 
         try {
             throwException(throwable);
