@@ -9,4 +9,4 @@ dependencies {
 ```
 
 ### Developing
-[uncheck for IntelliJ IDEA](https://github.com/auoeke/uncheck#using-the-intellij-plugin) is recommended in order to disable checked exception warnings.
+Use [uncheck for IntelliJ IDEA](https://github.com/auoeke/uncheck#using-the-intellij-plugin) in order to disable the checked exception warnings.
