@@ -1,12 +1,14 @@
 plugins {
     id("java-library")
     id("maven-publish")
+    id("signing")
     id("gronk").version("latest.release")
 }
 
 group("net.auoeke")
-version("1.7.1")
-
+version("1.7.2")
+description("static Unsafe")
+url("https://github.com/auoeke/unsafe")
 javaVersion(16)
 
 repositories {
@@ -24,8 +26,31 @@ publishing {
         mavenLocal()
 
         maven("maven.auoeke.net") {
-            username(systemProperty("maven.username"))
-            password(systemProperty("maven.password"))
+            username(findProperty("maven.username"))
+            password(findProperty("maven.password"))
+        }
+    }
+
+    publications.withType(MavenPublication) {MavenPublication publication ->
+        publication.pom {
+            licenses {
+                license {
+                    name.set("CC0-1.0")
+                    url.set("https://creativecommons.org/publicdomain/zero/1.0/legalcode")
+                }
+            }
+
+            developers {
+                developer {
+                    email.set("me@auoeke.net")
+                }
+            }
+
+            scm {
+                connection.set("scm:git:git://github.com/auoeke/unsafe.git")
+                developerConnection.set("scm:git:git://github.com/auoeke/unsafe.git")
+                url.set("https://github.com/auoeke/unsafe/tree/master")
+            }
         }
     }
 }
