@@ -21,6 +21,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
+java {
+    withJavadocJar()
+}
+
 publishing {
     repositories {
         mavenLocal()
