@@ -46,6 +46,7 @@ publishing {
 
             developers {
                 developer {
+                    id.set("auoeke")
                     email.set("me@auoeke.net")
                 }
             }
