@@ -1,6 +1,6 @@
 ```groovy
 repositories {
-    maven {url = "https://maven.auoeke.net"}
+    mavenCentral()
 }
 
 dependencies {
