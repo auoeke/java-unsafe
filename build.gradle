@@ -23,6 +23,10 @@ java {
     withJavadocJar()
 }
 
+jar {
+	manifest.from("resources/META-INF/MANIFEST.MF")
+}
+
 publishing {
     repositories {
         mavenLocal()
