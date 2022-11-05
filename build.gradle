@@ -8,7 +8,6 @@ plugins {
 group("net.auoeke")
 version("1.7.3")
 description("static Unsafe")
-url("https://github.com/auoeke/unsafe")
 javaVersion(16)
 
 repositories {
@@ -34,8 +33,10 @@ publishing {
         }
     }
 
-    publications.withType(MavenPublication) {MavenPublication publication ->
-        publication.pom {
+    publications.withType(MavenPublication) {
+        pom {
+	        url.set("https://github.com/auoeke/unsafe")
+
             licenses {
                 license {
                     name.set("CC0-1.0")
