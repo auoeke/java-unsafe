@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Specification-Title: unsafe
+Automatic-Module-Name: unsafe

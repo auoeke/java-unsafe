@@ -6,7 +6,7 @@ plugins {
 }
 
 group("net.auoeke")
-version("1.7.2")
+version("1.7.3")
 description("static Unsafe")
 url("https://github.com/auoeke/unsafe")
 javaVersion(16)
