@@ -27,9 +27,9 @@ publishing {
     repositories {
         mavenLocal()
 
-        maven("s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
-            username(findProperty("ossrh.id"))
-            password(findProperty("ossrh.password"))
+        maven(findProperty("maven.repository")) {
+            username(findProperty("maven.username"))
+            password(findProperty("maven.password"))
         }
     }
 
