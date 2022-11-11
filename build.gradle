@@ -17,6 +17,7 @@ repositories {
 dependencies {
 	annotationProcessor("net.auoeke:uncheck-all")
 	testImplementation("org.junit.jupiter:junit-jupiter")
+	testImplementation("net.auoeke:result")
 }
 
 java {
@@ -25,6 +26,10 @@ java {
 
 jar {
 	manifest.from("resources/META-INF/MANIFEST.MF")
+}
+
+compileTestJava {
+	sourceCompatibility = targetCompatibility = 19
 }
 
 publishing {
