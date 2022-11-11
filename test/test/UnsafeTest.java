@@ -6,19 +6,19 @@ import org.junit.platform.commons.annotation.Testable;
 
 @Testable
 public class UnsafeTest extends Unsafe {
-    @Test void allocateInstanceTest() {
-        assert allocateInstance(UnsafeTest.class).getClass() == UnsafeTest.class;
-    }
+	@Test void allocateInstanceTest() {
+		assert allocateInstance(UnsafeTest.class).getClass() == UnsafeTest.class;
+	}
 
-    @Test void throwable() {
-        var throwable = new Throwable();
+	@Test void throwable() {
+		var throwable = new Throwable();
 
-        try {
-            throwException(throwable);
+		try {
+			throwException(throwable);
 
-            throw new AssertionError();
-        } catch (Throwable trouble) {
-            assert trouble == throwable;
-        }
-    }
+			throw new AssertionError();
+		} catch (Throwable trouble) {
+			assert trouble == throwable;
+		}
+	}
 }

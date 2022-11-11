@@ -1,8 +1,8 @@
 plugins {
-    id("java-library")
-    id("maven-publish")
-    id("signing")
-    id("net.auoeke.gronk").version("latest.release")
+	id("java-library")
+	id("maven-publish")
+	id("signing")
+	id("net.auoeke.gronk").version("latest.release")
 }
 
 group("net.auoeke")
@@ -11,16 +11,16 @@ description("static Unsafe")
 javaVersion(16)
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    annotationProcessor("net.auoeke:uncheck-all")
-    testImplementation("org.junit.jupiter:junit-jupiter")
+	annotationProcessor("net.auoeke:uncheck-all")
+	testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
 java {
-    withJavadocJar()
+	withJavadocJar()
 }
 
 jar {
@@ -28,38 +28,38 @@ jar {
 }
 
 publishing {
-    repositories {
-        mavenLocal()
+	repositories {
+		mavenLocal()
 
-        maven(findProperty("maven.repository")) {
-            username(findProperty("maven.username"))
-            password(findProperty("maven.password"))
-        }
-    }
+		maven(findProperty("maven.repository")) {
+			username(findProperty("maven.username"))
+			password(findProperty("maven.password"))
+		}
+	}
 
-    publications.withType(MavenPublication) {
-        pom {
-	        url.set("https://github.com/auoeke/unsafe")
+	publications.withType(MavenPublication) {
+		pom {
+			url.set("https://github.com/auoeke/unsafe")
 
-            licenses {
-                license {
-                    name.set("CC0-1.0")
-                    url.set("https://creativecommons.org/publicdomain/zero/1.0/legalcode")
-                }
-            }
+			licenses {
+				license {
+					name.set("CC0-1.0")
+					url.set("https://creativecommons.org/publicdomain/zero/1.0/legalcode")
+				}
+			}
 
-            developers {
-                developer {
-                    id.set("auoeke")
-                    email.set("me@auoeke.net")
-                }
-            }
+			developers {
+				developer {
+					id.set("auoeke")
+					email.set("me@auoeke.net")
+				}
+			}
 
-            scm {
-                connection.set("scm:git:git://github.com/auoeke/unsafe.git")
-                developerConnection.set("scm:git:git://github.com/auoeke/unsafe.git")
-                url.set("https://github.com/auoeke/unsafe/tree/master")
-            }
-        }
-    }
+			scm {
+				connection.set("scm:git:git://github.com/auoeke/unsafe.git")
+				developerConnection.set("scm:git:git://github.com/auoeke/unsafe.git")
+				url.set("https://github.com/auoeke/unsafe/tree/master")
+			}
+		}
+	}
 }
