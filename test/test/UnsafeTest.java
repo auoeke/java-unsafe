@@ -13,7 +13,6 @@ public class UnsafeTest extends Unsafe {
 
 	@Test void throwable() {
 		var throwable = new Throwable();
-		var result = Result.of(() -> throwException(throwable));
-		assert result.isFailure() && result.cause().get() == throwable;
+		assert Result.of(() -> throwException(throwable)).cause().get() == throwable;
 	}
 }
