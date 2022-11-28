@@ -8,7 +8,7 @@ plugins {
 group("net.auoeke")
 version("1.7.4")
 description("static Unsafe")
-javaVersion(17)
+javaVersion(16)
 
 repositories {
 	mavenCentral()
