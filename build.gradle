@@ -2,22 +2,23 @@ plugins {
 	id("java-library")
 	id("maven-publish")
 	id("signing")
-	id("net.auoeke.gronk").version("latest.release")
+	id("net.auoeke.gronk").version("3.+")
 }
 
 group("net.auoeke")
-version("1.7.3")
+version("1.7.4")
 description("static Unsafe")
-javaVersion(16)
+javaVersion(17)
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	annotationProcessor("net.auoeke:uncheck-all")
-	testImplementation("org.junit.jupiter:junit-jupiter")
-	testImplementation("net.auoeke:result")
+	annotationProcessor("net.auoeke:dycon-javac-all", "net.auoeke:uncheck-all")
+	compileOnly("net.auoeke:dycon")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+	testImplementation("net.auoeke:result", "org.junit.jupiter:junit-jupiter-api")
 }
 
 java {
@@ -30,6 +31,10 @@ jar {
 
 compileTestJava {
 	sourceCompatibility = targetCompatibility = 19
+}
+
+test {
+	useJUnitPlatform()
 }
 
 publishing {
