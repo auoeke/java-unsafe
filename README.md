@@ -4,7 +4,7 @@ repositories {
 }
 
 dependencies {
-    implementation("net.gudenau.lib:unsafe:latest.release")
+    implementation("net.auoeke:unsafe:latest.release")
 }
 ```
 
